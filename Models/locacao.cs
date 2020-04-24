@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using DataBase;
-using Controllers;
 
 
 namespace Models {
@@ -27,12 +26,12 @@ namespace Models {
             Db.addLocacao(this);
 
         }
-
+/*
         public static void cadastrarLocacao(DateTime dataLocacao, DateTime dataDevolucao, int idCliente, List<Filme> filmesLocados){
             Locacao locacao = new Locacao(Db.listaLocacaos.Count,dataLocacao,dataDevolucao,idCliente,filmesLocados);
             Db.addLocacao(locacao);
         }
-
+*/
         public string ToString(Boolean aux =false){
             string retorno = $"Id :{idLocacao} # Data Locação:{dataLocacao} # Data de Devolução:{dataDevolucao} # ID do cliente:{idCliente} # Filmes locados:{filmesLocados}";
             return retorno; 
@@ -51,7 +50,7 @@ namespace Models {
                 opcao = Int32.Parse(Console.ReadLine());
                 switch(opcao){
                     case 1:
-                    filme = Controllers.Filme.pesquisarFilme();
+                    filme = Controller.Filme.pesquisarFilme();
                     filmeslocados.Add(filme);
                     break;
                     case 2:

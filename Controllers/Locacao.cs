@@ -1,14 +1,20 @@
 using System;
 using System.Collections.Generic;
+using DataBase;
+using Models;
 
-namespace Controllers{
+namespace Controller{
 
-    public class Locacao{
+    public class Locacao {
 
         static Boolean validacao = false;
 
         static DateTime data = DateTime.Now;
 
+        public static void cadastrarLocacao(DateTime dataLocacao, DateTime dataDevolucao, int idCliente, List<Models.Filme> filmesLocados){
+            Models.Locacao locacao = new Models.Locacao(Db.listaLocacaos.Count,dataLocacao,dataDevolucao,idCliente,filmesLocados);
+            Db.addLocacao(locacao);
+        }
         public static DateTime validarData(){
 
             do{

@@ -24,12 +24,12 @@ namespace Models{
             this.valor = valor;
             this.estoque = estoque;
         }
-
+/*
         public static void cadastrarFilme(string nome, DateTime dataLancamento, string sinopse, double valor, int estoque){
             Filme filme = new Filme(Db.listaFilmes.Count,nome,dataLancamento,sinopse,valor,estoque);
             Db.addFilme(filme);
         }
-
+*/
         public string ToString(Boolean aux = false){
             string retorno = $"Id :{idFilme} # Nome:{nomeFilme} # Data de Lançamento:{dataLancamento} # Valor:{valor} # Estoque:{estoque} # Sinopse:{sinopse}"; 
             return retorno;

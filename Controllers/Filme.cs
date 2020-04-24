@@ -1,16 +1,20 @@
 using System;
 using DataBase;
 
-namespace Controllers{
+namespace Controller {
 
-    public class Filme{
+    public class Filme {
 
         static Boolean validacao = false;
 
         static DateTime data = DateTime.Now;
 
-        public static DateTime validarData(){
+        public static void cadastrarFilme(string nome, DateTime dataLancamento, string sinopse, double valor, int estoque){
+            Models.Filme filme = new Models.Filme(Db.listaFilmes.Count,nome,dataLancamento,sinopse,valor,estoque);
+            Db.addFilme(filme);
+        }
 
+        public static DateTime validarData(){
             do{
                 Console.WriteLine("Insira a data no seguinte formato => (dd/mm/yyyy)");
                 string validaData = Console.ReadLine();

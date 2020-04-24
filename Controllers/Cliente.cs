@@ -1,13 +1,18 @@
 using System;
 using DataBase;
+using Models;
 
-namespace Controllers{
+namespace Controller{
 
-    public class Cliente{
+    public class Cliente {
         static Boolean validacao = false;
         static DateTime nascimento = DateTime.Now;
-        public static DateTime validarNascimentoCliente(){
 
+        public static void cadastrarCliente(string nome,DateTime dataNascimento,string cpf){
+            Models.Cliente cliente = new Models.Cliente(Db.listaClientes.Count,nome,dataNascimento,cpf);
+            Db.addCliente(cliente);
+        }
+        public static DateTime validarNascimentoCliente(){
             do{
                 Console.WriteLine("Insira a data de nascimento do cliente no seguinte formato => (dd/mm/yyyy)");
                 string validaNascimento = Console.ReadLine();
@@ -37,6 +42,6 @@ namespace Controllers{
                 }
             }while(cliente == null);
             return opcaoCliente;
-        }    
+        }           
     }
 }
