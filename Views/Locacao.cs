@@ -18,7 +18,7 @@ namespace Views{
             Console.WriteLine("Insira o ID do cliente");
             int idCliente =  Controller.Cliente.pesquisarCliente();
             Console.WriteLine("Favor insira os filmes que serão locados");
-            List<Models.Filme> filmesLocados = Models.Locacao.cadastrarLocacaoFilmes();
+            List<Models.Filme> filmesLocados = Controller.Locacao.cadastrarLocacaoFilmes();
             Controller.Locacao.cadastrarLocacao(dataLocacao,dataDevolucao,idCliente,filmesLocados);
 
         }

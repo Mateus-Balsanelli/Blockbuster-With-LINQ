@@ -17,6 +17,7 @@ namespace Models {
         public List<Filme> filmesLocados { get; set; }
 
 
+        /// <summary>  location object builder </summary>
         public Locacao(int idLocacao, DateTime dataLocacao, DateTime dataDevolucao, int idCliente, List<Filme> filmesLocados ){
             this.idLocacao = idLocacao;
             this.dataLocacao = dataLocacao;
@@ -26,43 +27,11 @@ namespace Models {
             Db.addLocacao(this);
 
         }
-/*
-        public static void cadastrarLocacao(DateTime dataLocacao, DateTime dataDevolucao, int idCliente, List<Filme> filmesLocados){
-            Locacao locacao = new Locacao(Db.listaLocacaos.Count,dataLocacao,dataDevolucao,idCliente,filmesLocados);
-            Db.addLocacao(locacao);
-        }
-*/
+
+        /// <summary>  location object toString </summary>
         public string ToString(Boolean aux =false){
             string retorno = $"Id :{idLocacao} # Data Locação:{dataLocacao} # Data de Devolução:{dataDevolucao} # ID do cliente:{idCliente} # Filmes locados:{filmesLocados}";
             return retorno; 
-        }
-
-        public static List<Models.Filme> cadastrarLocacaoFilmes(){
-            int opcao = 1;
-            Models.Filme filme = null;
-            List<Models.Filme> filmeslocados = new List<Models.Filme>();
-            do{
-                filme = null;
-                Console.WriteLine("Cadastrar filmes que serão locados");
-                Console.WriteLine("Esolha uma opção");
-                Console.WriteLine("[1] Adicionar um filme a essa locação");
-                Console.WriteLine("[2] Terminar Locação");
-                opcao = Int32.Parse(Console.ReadLine());
-                switch(opcao){
-                    case 1:
-                    filme = Controller.Filme.pesquisarFilme();
-                    filmeslocados.Add(filme);
-                    break;
-                    case 2:
-                    opcao = 2;
-                    break;
-                }
-                
-            }while(opcao == 1);
-            return filmeslocados;
-        }
-
-
-        
+        }    
     }
 }

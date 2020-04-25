@@ -4,6 +4,7 @@ namespace Controller{
 
     public static class MenuInicial{
         
+        /// <summary> validate the entry of an integer </summary>
         public static int validarNumero() {
             int numero;
             try{

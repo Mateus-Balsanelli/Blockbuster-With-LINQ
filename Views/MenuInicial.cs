@@ -1,5 +1,6 @@
 using System;
 using DataBase;
+using Controller;
  
 namespace Views{
     public class MenuInicial{
@@ -48,7 +49,7 @@ namespace Views{
                     Locacao.cadastrarLocacao();
                 break;
                 case 7:
-                    Cliente.pesquisarCliente();
+                    Controller.Cliente.pesquisarClienteEspecifico();
                 break;
                 case 8:
                 break;

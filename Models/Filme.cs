@@ -16,6 +16,7 @@ namespace Models{
 
         public int estoque { get; set; }
 
+        /// <summary>  movie object builder </summary>
         public Filme(int idFilme,string nomeFilme,DateTime dataLancamento,string sinopse,double valor,int estoque){
             this.idFilme = idFilme;
             this.nomeFilme = nomeFilme;
@@ -24,12 +25,8 @@ namespace Models{
             this.valor = valor;
             this.estoque = estoque;
         }
-/*
-        public static void cadastrarFilme(string nome, DateTime dataLancamento, string sinopse, double valor, int estoque){
-            Filme filme = new Filme(Db.listaFilmes.Count,nome,dataLancamento,sinopse,valor,estoque);
-            Db.addFilme(filme);
-        }
-*/
+
+        /// <summary>  Movie object toString </summary>
         public string ToString(Boolean aux = false){
             string retorno = $"Id :{idFilme} # Nome:{nomeFilme} # Data de Lançamento:{dataLancamento} # Valor:{valor} # Estoque:{estoque} # Sinopse:{sinopse}"; 
             return retorno;

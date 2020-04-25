@@ -13,18 +13,15 @@ namespace Models{
 
         public string cpf { get; set; }
 
+        /// <summary> Customer object builder </summary>
         public Cliente (int id,string nomeCliente,DateTime dataNascimento,string cpf){
             this.idCliente = id;
             this.nomeCliente = nomeCliente;
             this.dataNascimento = dataNascimento;
             this.cpf = cpf;
         }
-/*
-        public static void cadastrarCliente(string nome,DateTime dataNascimento,string cpf){
-            Cliente cliente = new Cliente(Db.listaClientes.Count,nome,dataNascimento,cpf);
-            Db.addCliente(cliente);
-        }
-*/
+
+        /// <summary>  Customer object toString </summary>
         public string ToString(Boolean aux = false){
             string retorno = $"Id:{idCliente} # Nome:{nomeCliente} # Data de Nascimetno:{dataNascimento} #  CPF:{cpf} ";
             return retorno;

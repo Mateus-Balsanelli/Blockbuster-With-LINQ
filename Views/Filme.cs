@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using DataBase;
 
 namespace Views{
@@ -25,19 +23,6 @@ namespace Views{
             Controller.Filme.cadastrarFilme(nome,dataLancamento,sinopse,valor,estoque);
 
         }
-        
-        ///<summary> Search for a especific movie "menu"  </summary>
-        public static void pesquisarFilme(){
-            System.Console.WriteLine("Menu de Busca filme");
-            System.Console.WriteLine("Insira o ID do filme");
-            int id = Int32.Parse(Console.ReadLine());
-            IEnumerable<Models.Filme> clienteQuery =
-                from objeto in Db.Filmes()
-                where objeto.idFilme == id
-                select objeto;
-            foreach(Models.Filme filme in clienteQuery)  {
-                System.Console.WriteLine(filme.nomeFilme);
-            } 
-        }    
+            
     }
 }
